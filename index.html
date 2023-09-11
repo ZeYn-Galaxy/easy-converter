@@ -8,6 +8,21 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+    <!-- Preloader -->
+    <<div class="preloader" id="preloader">
+            <div class="loader"></div>
+        </div>
+    </div>
+
+    <header>
+        <ul class="menu">
+            <li class="active"><a href="">Beranda</a></li>
+            <li><a href="https://github.com/ZeYn-Galaxy/easy-converter/blob/Main/README.md">Tentang</a></li>
+            <li><a href="#contact">GitHub</a></li>
+        </ul>
+    </header>
+
+    <div class="container">
     <div class="container">
         <h1>Konverter Bilangan Desimal & Biner</h1>
         <div class="form">
@@ -23,12 +38,23 @@
         </div>
         <button id="clearBtn">Clear</button>
     </div>
-
+    <footer>
+        &copy; 2023 ZeYn-Galaxy & Fk0u. All rights reserved.
+    </footer>
     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("preloader").classList.add("active");
+          });
+        
+        $(window).on("load", function() {
+            setTimeout(function() {
+                $(".preloader").fadeOut("none");
+            }, 200);
+        
         $(document).ready(function() {
             $("#decimalToBinaryBtn").click(function() {
                 const inputValue = $("#inputField").val().trim();
-
+        
                 try {
                     const decimalNum = parseInt(inputValue, 10);
                     if (!isNaN(decimalNum)) {
@@ -41,10 +67,10 @@
                     $("#outputLabel").text("Terjadi kesalahan. Silakan coba lagi.");
                 }
             });
-
+        
             $("#binaryToDecimalBtn").click(function() {
                 const inputValue = $("#inputField").val().trim();
-
+        
                 try {
                     const decimalNum = parseInt(inputValue, 2);
                     if (!isNaN(decimalNum)) {
@@ -56,11 +82,11 @@
                     $("#outputLabel").text("Terjadi kesalahan. Silakan coba lagi.");
                 }
             });
-
+        
             $("#clearBtn").click(function() {
                 $("#outputLabel").text("");
             });
         });
-    </script>
+            <script>
 </body>
 </html>

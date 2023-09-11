@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konverter Bilangan Desimal & Biner</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Konverter Bilangan Desimal & Biner</h1>
+        <div class="form">
+            <span>Masukkan Desimal/Binary</span>
+            <input type="text" id="inputField" class="input-field" placeholder="Desimal/Binary">
+            <div class="between">
+                <button id="decimalToBinaryBtn">Desimal ke Biner</button>
+                <button id="binaryToDecimalBtn">Biner ke Desimal</button>
+            </div>
+        </div>
+        <div class="output">
+            <p id="outputLabel"></p>
+        </div>
+        <button id="clearBtn">Clear</button>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#decimalToBinaryBtn").click(function() {
+                const inputValue = $("#inputField").val().trim();
+
+                try {
+                    const decimalNum = parseInt(inputValue, 10);
+                    if (!isNaN(decimalNum)) {
+                        const binaryNum = decimalNum.toString(2);
+                        $("#outputLabel").text(`Biner: ${binaryNum}`);
+                    } else {
+                        $("#outputLabel").text("Masukan tidak valid. Silakan masukkan nomor desimal yang valid.");
+                    }
+                } catch (error) {
+                    $("#outputLabel").text("Terjadi kesalahan. Silakan coba lagi.");
+                }
+            });
+
+            $("#binaryToDecimalBtn").click(function() {
+                const inputValue = $("#inputField").val().trim();
+
+                try {
+                    const decimalNum = parseInt(inputValue, 2);
+                    if (!isNaN(decimalNum)) {
+                        $("#outputLabel").text(`Desimal: ${decimalNum}`);
+                    } else {
+                        $("#outputLabel").text("Masukan tidak valid. Silakan masukkan nomor biner yang valid.");
+                    }
+                } catch (error) {
+                    $("#outputLabel").text("Terjadi kesalahan. Silakan coba lagi.");
+                }
+            });
+
+            $("#clearBtn").click(function() {
+                $("#outputLabel").text("");
+            });
+        });
+    </script>
+</body>
+</html>

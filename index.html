@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Konverter Bilangan Desimal & Biner</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/binary.js"></script>
 </head>
+
 <body>
     <header>
         <ul class="menu">
@@ -17,62 +20,77 @@
     </header>
 
     <div class="container">
-    <div class="container">
-        <h1>Konverter Bilangan Desimal & Biner</h1>
-        <div class="form">
-            <span>Masukkan Desimal/Binary</span>
-            <input type="text" id="inputField" class="input-field" placeholder="Desimal/Binary">
-            <div class="between">
-                <button id="decimalToBinaryBtn">Desimal ke Biner</button>
-                <button id="binaryToDecimalBtn">Biner ke Desimal</button>
+        <div class="container">
+            <h1>Konverter Bilangan Desimal & Biner</h1>
+            <div class="form">
+                <span class="title">TITLE</span>
+                <div class="between">
+                    <select id="c1-binary">
+                        <option value="binary" selected>Binary</option>
+                        <option value="decimal">Desimal</option>
+                    </select>
+                    <button id="swap-binary">></button>
+                    <select id="c2-binary">
+                        <option value="binary">Binary</option>
+                        <option value="decimal" selected>Desimal</option>
+                    </select>
+                </div>
+                <!-- <span>Masukkan Desimal/Binary</span> -->
+                <input type="text" id="inputField" class="input-field" placeholder="Desimal/Binary" required>
+                <div class="between">
+                    <!-- <button id="decimalToBinaryBtn">Desimal ke Biner</button>
+                    <button id="binaryToDecimalBtn">Biner ke Desimal</button> -->
+                </div>
+                <button id="binary-generate">GENERATE</button>
             </div>
+
+            <div class="output">
+                <p id="outputLabel"></p>
+            </div>
+            <button id="clearBtn">Clear</button>
         </div>
-        <div class="output">
-            <p id="outputLabel"></p>
-        </div>
-        <button id="clearBtn">Clear</button>
-    </div>
-    <footer>
-        &copy; 2023 ZeYn-Galaxy & Fk0u. All rights reserved.
-    </footer>
-    
-        <script>
-        $(document).ready(function() {
-            $("#decimalToBinaryBtn").click(function() {
-                const inputValue = $("#inputField").val().trim();
+        <footer>
+            &copy; 2023 ZeYn-Galaxy & Fk0u. All rights reserved.
+        </footer>
 
-                try {
-                    const decimalNum = parseInt(inputValue, 10);
-                    if (!isNaN(decimalNum)) {
-                        const binaryNum = decimalNum.toString(2);
-                        $("#outputLabel").text(`Biner: ${binaryNum}`);
-                    } else {
-                        $("#outputLabel").text("Masukan tidak valid. Silakan masukkan nomor desimal yang valid.");
+        <!-- <script>
+            $(document).ready(function () {
+                $("#decimalToBinaryBtn").click(function () {
+                    const inputValue = $("#inputField").val().trim();
+
+                    try {
+                        const decimalNum = parseInt(inputValue, 10);
+                        if (!isNaN(decimalNum)) {
+                            const binaryNum = decimalNum.toString(2);
+                            $("#outputLabel").text(`Biner: ${binaryNum}`);
+                        } else {
+                            $("#outputLabel").text("Masukan tidak valid. Silakan masukkan nomor desimal yang valid.");
+                        }
+                    } catch (error) {
+                        $("#outputLabel").text("Terjadi kesalahan. Silakan coba lagi.");
                     }
-                } catch (error) {
-                    $("#outputLabel").text("Terjadi kesalahan. Silakan coba lagi.");
-                }
-            });
+                });
 
-            $("#binaryToDecimalBtn").click(function() {
-                const inputValue = $("#inputField").val().trim();
+                $("#binaryToDecimalBtn").click(function () {
+                    const inputValue = $("#inputField").val().trim();
 
-                try {
-                    const decimalNum = parseInt(inputValue, 2);
-                    if (!isNaN(decimalNum)) {
-                        $("#outputLabel").text(`Desimal: ${decimalNum}`);
-                    } else {
-                        $("#outputLabel").text("Masukan tidak valid. Silakan masukkan nomor biner yang valid.");
+                    try {
+                        const decimalNum = parseInt(inputValue, 2);
+                        if (!isNaN(decimalNum)) {
+                            $("#outputLabel").text(`Desimal: ${decimalNum}`);
+                        } else {
+                            $("#outputLabel").text("Masukan tidak valid. Silakan masukkan nomor biner yang valid.");
+                        }
+                    } catch (error) {
+                        $("#outputLabel").text("Terjadi kesalahan. Silakan coba lagi.");
                     }
-                } catch (error) {
-                    $("#outputLabel").text("Terjadi kesalahan. Silakan coba lagi.");
-                }
-            });
+                });
 
-            $("#clearBtn").click(function() {
-                $("#outputLabel").text("");
+                $("#clearBtn").click(function () {
+                    $("#outputLabel").text("");
+                });
             });
-        });
-    </script>
+        </script> -->
 </body>
+
 </html>

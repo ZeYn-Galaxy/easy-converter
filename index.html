@@ -35,20 +35,12 @@
     <footer>
         &copy; 2023 ZeYn-Galaxy & Fk0u. All rights reserved.
     </footer>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.getElementById("preloader").classList.add("active");
-          });
-        
-        $(window).on("load", function() {
-            setTimeout(function() {
-                $(".preloader").fadeOut("none");
-            }, 200);
-        
+    
+        <script>
         $(document).ready(function() {
             $("#decimalToBinaryBtn").click(function() {
                 const inputValue = $("#inputField").val().trim();
-        
+
                 try {
                     const decimalNum = parseInt(inputValue, 10);
                     if (!isNaN(decimalNum)) {
@@ -61,10 +53,10 @@
                     $("#outputLabel").text("Terjadi kesalahan. Silakan coba lagi.");
                 }
             });
-        
+
             $("#binaryToDecimalBtn").click(function() {
                 const inputValue = $("#inputField").val().trim();
-        
+
                 try {
                     const decimalNum = parseInt(inputValue, 2);
                     if (!isNaN(decimalNum)) {
@@ -76,11 +68,11 @@
                     $("#outputLabel").text("Terjadi kesalahan. Silakan coba lagi.");
                 }
             });
-        
+
             $("#clearBtn").click(function() {
                 $("#outputLabel").text("");
             });
         });
-            <script>
+    </script>
 </body>
 </html>

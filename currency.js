@@ -1,7 +1,8 @@
 function convertCurrency() {
     const amount = parseFloat(document.getElementById("amount").value);
-    const fromCurrency = document.getElementById("fromCurrency").value;
-    const toCurrency = document.getElementById("toCurrency").value;
+    const currencies = ["USD", "EUR", "GBP", "JPY", "IDR", "SGD", "AUD", "CAD"];
+    const fromCurrency = document.getElementById("fromCurrency");
+    const toCurrency = document.getElementById("toCurrency");
     
     // Mengganti API URL dengan URL ExchangeRate-API dan menambahkan API Key
     const apiKey = "9a20da159de970a464b877dc3347b782";
